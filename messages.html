@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>www.hotelNasi.com</title>
+
+  <!-- Custom Styles link -->
+  <link rel="stylesheet" href="style.css">
+  <!--Custom Same Styles link-->
+  <link rel="stylesheet" href="same.css">
+</head>
+
+<body>
+
+  <div class="logo-box">
+    <img src="logo.png" alt="" class="logo">
+  </div>
+  <div class="links" id="links">
+    <ul>
+      <li>
+        <a class="active" href="index.html">home</a>
+      </li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="rooms.html">rooms</a></li>
+      <li><a href="services.html">services</a></li>
+      <li><a href="contact.html">contact</a>
+      </li>
+    </ul>
+  </div>
+  <div class="btn-box"> <img src="menu-btn.png" alt="" class="menu-btn" id="menu-btn">
+  </div>
+
+  <section class="msg-sec">
+    <form>
+      <h1 class="h1">BOOK A ROOM</h1>
+      <p>Book any room of you choice and fill up the form. Remember that your information is true!</p>
+      <input type="text" class="inp" placeholder="Your Name">
+      <br>
+      <input type="email" class="inp" placeholder="Your Email">
+      <br>
+      <select class="inp">
+        <option disabled selected>Please Select Person*</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <br>
+      <select class="inp">
+        <option disabled selected>Please Select Your Room*</option>
+        <option value="1">SINGLE BED ROOM</option>
+        <option value="2">SINGLE ROOM DOUBLE BED</option>
+        <option value="3">KING SIZE BEDROOM</option>
+        <option value="4">DELUXE ROOM</option>
+        <option value="5">SPECIAL SPA ROOM</option>
+        <option value="6">FAMILY ROOM</option>
+        <option value="7">CHILDREN ROOM</option>
+        <option value="8">LUXUARY ROOM</option>
+        <option value="9">SIMPLE ROOM</option>
+      </select>
+      <br>
+      <textarea class="inp" placeholder="Any Message For Us" rows="4" required></textarea>
+      <br>
+      <button onclick="alertBox()" type="submit" class="inp-btn">BOOK!</button>
+    </form>
+  </section>
+
+
+  <script>
+    // for links
+
+    var state = false;
+    var bar = document.getElementById('links');
+    var btn = document.getElementById('menu-btn');
+    var body = document.getElementById('body')
+    var theme_btn = document.getElementById('theme');
+
+
+    btn.addEventListener('click', function() {
+      if (state) {
+        bar.classList = 'none links';
+        state = false;
+      } else {
+        bar.classList = 'block links';
+        state = true;
+      }
+    });
+
+    theme_btn.addEventListener('click', function() {
+      if (state) {
+        body.classList = 'light';
+        theme_btn.innerText = 'Dark Theme'
+        state = false;
+      } else {
+        body.classList = 'dark';
+        theme_btn.innerText = 'Light Theme'
+        state = true;
+      }
+    });
+
+    function alertBox() {
+      alert('There is a problem. Please try again later')
+    }
+  </script>
+</body>
+
+</html>
